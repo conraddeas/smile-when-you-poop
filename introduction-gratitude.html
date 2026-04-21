@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Introduction &mdash; Ridiculous Gratitude &mdash; Smile When You Poop</title>
+  <meta name="robots" content="noindex, nofollow" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+  <style>
+    :root {
+      --cream:        #faf6f0;
+      --warm-white:   #fff9f2;
+      --tan:          #e8ddd0;
+      --brown:        #7a5c44;
+      --dark:         #2c1f14;
+      --accent:       #d4793a;
+      --accent-light: #f0c49a;
+      --text:         #3a2a1e;
+      --muted:        #9a8070;
+      --navy:         #1e2d3d;
+      --gold:         #c9a05f;
+      --prose-color:  #2a2a2a;
+      --border:       #d8d0c0;
+    }
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+    html { scroll-behavior: smooth; }
+    body {
+      background: var(--cream);
+      color: var(--text);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 300;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    /* ── TOP NAV ── */
+    .top-nav {
+      background: var(--dark);
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0.85rem 1.5rem;
+      position: sticky;
+      top: 0;
+      z-index: 100;
+    }
+    .top-nav a {
+      color: rgba(250,246,240,0.6);
+      text-decoration: none;
+      font-size: 0.8rem;
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 400;
+      transition: color 0.15s;
+    }
+    .top-nav a:hover { color: var(--cream); }
+    .top-nav .book-title {
+      font-family: 'Lora', serif;
+      font-size: 0.85rem;
+      color: var(--cream);
+      font-weight: 400;
+      font-style: italic;
+    }
+    /* ── PROGRESS DOTS ── */
+    .progress-wrap {
+      background: var(--warm-white);
+      border-bottom: 1px solid var(--tan);
+      padding: 0.7rem 1.5rem;
+    }
+    .progress-groups {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      max-width: 600px;
+      margin: 0 auto;
+    }
+    .progress-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      gap: 0.35rem;
+    }
+    .progress-group-label {
+      font-size: 0.58rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 500;
+    }
+    .progress-dots { display: flex; gap: 0.4rem; align-items: center; }
+    .dot {
+      width: 8px; height: 8px;
+      border-radius: 50%;
+      background: var(--tan);
+      border: 1.5px solid var(--tan);
+      transition: all 0.2s;
+      flex-shrink: 0;
+    }
+    .dot.done { background: var(--brown); border-color: var(--brown); }
+    .dot.active {
+      background: var(--accent);
+      border-color: var(--accent);
+      transform: scale(1.35);
+      box-shadow: 0 0 0 3px rgba(212,121,58,0.2);
+    }
+    /* ── MAIN ── */
+    main {
+      max-width: 680px;
+      margin: 0 auto;
+      padding: 2.5rem 1.25rem 3rem;
+      flex: 1;
+    }
+    /* ── TYPOGRAPHY ── */
+    .section-label {
+      font-size: 0.68rem;
+      text-transform: uppercase;
+      letter-spacing: 0.14em;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      margin-bottom: 0.5rem;
+      display: block;
+    }
+    .page-title {
+      font-size: clamp(1.6rem, 4vw, 2.1rem);
+      font-weight: 700;
+      color: var(--navy);
+      font-family: Georgia, 'Times New Roman', serif;
+      line-height: 1.15;
+      margin-bottom: 0.5rem;
+    }
+    .page-subtitle {
+      font-size: 0.9rem;
+      font-style: italic;
+      color: var(--muted);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 2rem;
+    }
+    .h2 {
+      font-size: 1.35rem;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: Georgia, 'Times New Roman', serif;
+      margin-top: 2rem;
+      margin-bottom: 0.875rem;
+      line-height: 1.25;
+    }
+    .h2.no-top { margin-top: 0; }
+    .h3 {
+      font-size: 1.1rem;
+      font-weight: 700;
+      color: var(--navy);
+      font-family: Georgia, 'Times New Roman', serif;
+      margin-top: 1.75rem;
+      margin-bottom: 0.625rem;
+    }
+    .h3.no-top { margin-top: 0; }
+    /* ── PROSE ── */
+    .prose {
+      font-size: 1.0625rem;
+      line-height: 1.875;
+      color: var(--prose-color);
+      font-family: Georgia, 'Times New Roman', serif;
+      margin-bottom: 1.25rem;
+    }
+    .prose:last-child { margin-bottom: 0; }
+    .prose.bold { font-weight: 700; color: var(--navy); }
+    .prose.italic-muted { font-style: italic; color: var(--muted); }
+    .blockquote {
+      border-left: 3px solid var(--gold);
+      padding-left: 1.25rem;
+      margin: 1.5rem 0;
+      font-style: italic;
+      color: var(--muted);
+      font-family: Georgia, 'Times New Roman', serif;
+      font-size: 1.0625rem;
+      line-height: 1.8;
+    }
+    /* ── LISTS ── */
+    .prose-list {
+      padding-left: 1.5rem;
+      margin-bottom: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 0.6rem;
+    }
+    .prose-list li {
+      font-size: 1.0625rem;
+      line-height: 1.875;
+      color: var(--prose-color);
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    /* ── CARD ── */
+    .card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 2rem 2rem 1.75rem;
+    }
+    .card-heading {
+      font-size: 0.92rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.07em;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      margin-bottom: 1.25rem;
+    }
+    /* ── FORMULA CARD ── */
+    .formula-card {
+      background: #fff;
+      border: 1px solid var(--border);
+      border-radius: 0.75rem;
+      padding: 1.75rem 2rem;
+      margin: 1.75rem 0;
+    }
+    .step-list {
+      padding-left: 1.25rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0;
+    }
+    .step-list li {
+      font-size: 1.0625rem;
+      line-height: 1.875;
+      color: var(--prose-color);
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    /* ── SUMMARY BOX ── */
+    .summary-box {
+      border: 1.5px dashed var(--border);
+      border-radius: 0.75rem;
+      padding: 1.75rem 2rem;
+      margin: 2rem 0;
+    }
+    .summary-label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--gold);
+      font-family: 'DM Sans', sans-serif;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+    .check-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+      margin-bottom: 1.25rem;
+    }
+    .check-list li {
+      font-size: 1.0rem;
+      line-height: 1.75;
+      color: var(--prose-color);
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    .action-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.35rem;
+    }
+    .action-list li {
+      font-size: 1.0rem;
+      line-height: 1.75;
+      color: var(--prose-color);
+      font-family: Georgia, 'Times New Roman', serif;
+      display: flex;
+      gap: 0.5rem;
+    }
+    .check-box { color: var(--muted); flex-shrink: 0; }
+    /* ── SWYP BUTTON ── */
+    .swyp-btn-wrap { margin-top: 2rem; }
+    .swyp-btn {
+      display: block;
+      width: 100%;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 1.05rem;
+      font-weight: 500;
+      padding: 1rem 1.5rem;
+      border-radius: 10px;
+      border: none;
+      cursor: pointer;
+      text-align: center;
+      transition: background 0.15s, transform 0.12s;
+      letter-spacing: 0.01em;
+    }
+    .swyp-btn:hover { background: #c06830; transform: translateY(-1px); }
+    .swyp-btn:disabled { background: var(--brown); cursor: default; transform: none; }
+    .swyp-confirm {
+      text-align: center;
+      font-size: 0.85rem;
+      color: var(--brown);
+      font-family: 'DM Sans', sans-serif;
+      margin-top: 0.75rem;
+      display: none;
+    }
+    /* ── Q&A ── */
+    .qa-block { margin-bottom: 1.5rem; }
+    .qa-block:last-child { margin-bottom: 0; }
+    .qa-question {
+      font-size: 1.0625rem;
+      line-height: 1.875;
+      font-style: italic;
+      color: var(--muted);
+      font-family: Georgia, 'Times New Roman', serif;
+      margin-bottom: 0.4rem;
+    }
+    .qa-answer {
+      font-size: 1.0625rem;
+      line-height: 1.875;
+      color: var(--prose-color);
+      font-family: Georgia, 'Times New Roman', serif;
+    }
+    /* ── IMAGES ── */
+    .content-img {
+      width: 100%;
+      border-radius: 0.5rem;
+      margin-bottom: 1.25rem;
+      display: block;
+      border: 1px solid var(--border);
+    }
+    /* ── SECTION NAV ── */
+    .section-nav {
+      background: var(--warm-white);
+      border-top: 1px solid var(--tan);
+      padding: 1rem 1.5rem;
+    }
+    .section-nav-inner {
+      max-width: 680px;
+      margin: 0 auto;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+    }
+    .nav-btn {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.35rem;
+      color: var(--brown);
+      text-decoration: none;
+      font-size: 0.85rem;
+      font-weight: 500;
+      font-family: 'DM Sans', sans-serif;
+      padding: 0.55rem 1rem;
+      border-radius: 8px;
+      border: 1.5px solid var(--tan);
+      background: var(--warm-white);
+      transition: all 0.15s;
+      white-space: nowrap;
+    }
+    .nav-btn:hover { border-color: var(--accent); color: var(--accent); }
+    .nav-btn.next { background: var(--accent); color: #fff; border-color: var(--accent); }
+    .nav-btn.next:hover { background: #c06830; border-color: #c06830; color: #fff; }
+    .nav-pos { font-size: 0.72rem; color: var(--muted); font-family: 'DM Sans', sans-serif; text-align: center; }
+    /* ── FOOTER ── */
+    footer {
+      text-align: center;
+      padding: 1.25rem;
+      font-size: 0.75rem;
+      color: var(--muted);
+      border-top: 1px solid var(--tan);
+    }
+    /* ── ANIMATIONS ── */
+    .fade-in { opacity: 0; transform: translateY(10px); animation: fadeUp 0.4s ease forwards; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
+    /* ── MOBILE ── */
+    @media (max-width: 600px) {
+      main { padding: 1.75rem 1rem 2.5rem; }
+      .card { padding: 1.5rem 1.25rem; }
+      .formula-card { padding: 1.25rem 1.5rem; }
+      .summary-box { padding: 1.25rem 1.5rem; }
+      .top-nav .book-title { display: none; }
+      .progress-groups { gap: 1rem; }
+      .progress-group-label { font-size: 0.52rem; }
+    }
+
+  </style>
+</head>
+<body>
+<nav class="top-nav">
+  <a href="index.html">&#8592; Reading Options</a>
+  <span class="book-title">Smile When You Poop</span>
+  <a href="feedback.html">Feedback</a>
+</nav>
+<div class="progress-wrap"><div class="progress-groups">
+      <div class="progress-group">
+        <div class="progress-group-label">Quick Start</div>
+        <div class="progress-dots"><div class="dot done"></div><div class="dot done"></div><div class="dot done"></div><div class="dot done"></div></div>
+      </div>
+      <div class="progress-group">
+        <div class="progress-group-label">Introduction</div>
+        <div class="progress-dots"><div class="dot done"></div><div class="dot done"></div><div class="dot done"></div><div class="dot active"></div></div>
+      </div>
+      <div class="progress-group">
+        <div class="progress-group-label">Chapter 1</div>
+        <div class="progress-dots"><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div><div class="dot"></div></div>
+      </div>
+    </div></div>
+<main>
+<span class="section-label fade-in" style="animation-delay:0.02s">Introduction &mdash; continued</span>
+<h3 class="h3 no-top fade-in" style="animation-delay:0.06s">Ridiculous Gratitude</h3>
+<p class="prose fade-in" style="animation-delay:0.1s">A few years before I saw the bumper sticker, I started practicing something I call ridiculous gratitude. At first, I didn&rsquo;t have a name for what I was doing. I was just noticing weird things to appreciate. Usually on long walks. Eventually, I realized my gratitude fell into three patterns:</p>
+<ul class="prose-list fade-in" style="animation-delay:0.14s">
+  <li><strong>Ridiculous Stretch:</strong> I began stretching my mind to find gratitude in situations or things that didn&rsquo;t seem to call for it. When my water bill was five times normal, I appreciated the workers fixing things I didn&rsquo;t even know existed.</li>
+  <li><strong>Ridiculously Small:</strong> I was spotting and appreciating tiny things or experiences I was ignoring before. Toilet paper, doorknobs, the fact that gravity keeps coffee in my cup. These helpers are usually invisible until they break.</li>
+  <li><strong>Ridiculously Proactive:</strong> I started seeing reasons to be grateful. I wasn&rsquo;t waiting for good circumstances. I was noticing what&rsquo;s working instead of hoping gratitude showed up.</li>
+</ul>
+<p class="prose fade-in" style="animation-delay:0.2s">I didn&rsquo;t know it then, but this practice was preparing me for what I&rsquo;d later call my &ldquo;season of chaosity.&rdquo; That story waits in Chapter 5. First, the practice.</p>
+<p class="prose fade-in" style="animation-delay:0.24s">By practicing gratitude during ordinary moments, your brain learns to find solid ground during hard times. Like muscle memory for athletes &mdash; you practice thousands of times, so you default to automatic gratitude under pressure before you even realize it.</p>
+<p class="prose bold fade-in" style="animation-delay:0.28s">By the end of the next chapter, you&rsquo;ll be ready to start your new gratitude habit today.</p>
+</main>
+<nav class="section-nav">
+  <div class="section-nav-inner">
+    <a href="introduction-ridiculous.html" class="nav-btn prev">&#8592; Previous</a>
+    <span class="nav-pos">8 of 13</span>
+    <a href="chapter1-habit.html" class="nav-btn next">Next &#8594;</a>
+  </div>
+</nav>
+<footer>&copy; 2025 Conrad Deas &nbsp;&middot;&nbsp; Smile When You Poop &nbsp;&middot;&nbsp; Advance Reader Copy &mdash; Not for distribution</footer>
+</body>
+</html>
