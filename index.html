@@ -3,36 +3,36 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Smile When You Poop — Founding Reader Edition</title>
+  <title>Smile When You Poop &mdash; Advance Reader Copy</title>
   <meta name="robots" content="noindex, nofollow" />
 
-  <meta property="og:title" content="Smile When You Poop — Founding Reader Edition" />
-  <meta property="og:description" content="Join 10,000 Founding SWYPers before World Gratitude Day" />
-  <meta property="og:image" content="https://smilewhenyoupoop.com/share-image.jpg" />
+  <!-- Open Graph / Social Sharing -->
+  <meta property="og:title" content="Smile When You Poop &mdash; Advance Reader Copy" />
+  <meta property="og:description" content="How to Be Grateful When Life Is Hard" />
+  <meta property="og:image" content="https://read.smilewhenyoupoop.com/share-image.jpg" />
   <meta property="og:image:width" content="1200" />
   <meta property="og:image:height" content="630" />
-  <meta property="og:url" content="https://smilewhenyoupoop.com/" />
+  <meta property="og:url" content="https://read.smilewhenyoupoop.com/" />
   <meta property="og:type" content="website" />
+
+  <!-- Twitter/X Card -->
   <meta name="twitter:card" content="summary_large_image" />
-  <meta name="twitter:title" content="Smile When You Poop — Founding Reader Edition" />
-  <meta name="twitter:description" content="Join 10,000 Founding SWYPers before World Gratitude Day" />
-  <meta name="twitter:image" content="https://smilewhenyoupoop.com/share-image.jpg" />
+  <meta name="twitter:title" content="Smile When You Poop &mdash; Advance Reader Copy" />
+  <meta name="twitter:description" content="How to Be Grateful When Life Is Hard" />
+  <meta name="twitter:image" content="https://read.smilewhenyoupoop.com/share-image.jpg" />
 
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;0,700;1,400&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Lora:ital,wght@0,400;0,600;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
 
   <style>
-    /* ── TOKENS ── */
     :root {
       --cream:        #faf6f0;
       --warm-white:   #fff9f2;
       --tan:          #e8ddd0;
       --brown:        #7a5c44;
-      --dark:         #1e1208;
-      --hero-dark:    #140d04;
+      --dark:         #2c1f14;
       --accent:       #d4793a;
-      --accent-gold:  #e8a045;
       --accent-light: #f0c49a;
       --text:         #3a2a1e;
       --muted:        #9a8070;
@@ -40,7 +40,6 @@
       --shadow:       0 4px 28px rgba(44,31,20,0.11);
       --shadow-hover: 0 8px 40px rgba(44,31,20,0.18);
     }
-
     *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
     html { scroll-behavior: smooth; }
     body {
@@ -51,265 +50,69 @@
       min-height: 100vh;
     }
 
-    /* ══════════════════════════════════════
-       HERO — Mission Control
-    ══════════════════════════════════════ */
-    .hero {
-      background: var(--hero-dark);
-      position: relative;
-      overflow: hidden;
-      padding: 3.5rem 1.5rem 3rem;
-    }
-
-    /* Grain texture overlay */
-    .hero::before {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background-image: url("data:image/svg+xml,%3Csvg viewBox='0 0 200 200' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)' opacity='1'/%3E%3C/svg%3E");
-      opacity: 0.035;
-      pointer-events: none;
-    }
-
-    /* Warm radial glow */
-    .hero::after {
-      content: '';
-      position: absolute;
-      inset: 0;
-      background: radial-gradient(ellipse at 50% 0%, rgba(212,121,58,0.14) 0%, transparent 65%);
-      pointer-events: none;
-    }
-
-    /* Orange top accent line */
-    .hero-topline {
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      height: 3px;
-      background: linear-gradient(90deg, transparent, var(--accent), var(--accent-gold), var(--accent), transparent);
-    }
-
-    .hero-inner {
-      position: relative;
-      z-index: 1;
-      max-width: 680px;
-      margin: 0 auto;
+    /* ── HEADER ── */
+    header {
+      background: var(--dark);
+      color: var(--cream);
       text-align: center;
+      padding: 2.5rem 1.5rem 2.25rem;
+      position: relative;
+      overflow: hidden;
     }
-
-    /* Badge */
-    .founding-badge {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.4rem;
-      background: rgba(212,121,58,0.15);
-      border: 1px solid rgba(212,121,58,0.35);
-      color: var(--accent-light);
-      font-size: 0.67rem;
+    header::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background: radial-gradient(ellipse at 60% 0%, rgba(212,121,58,0.18) 0%, transparent 65%);
+      pointer-events: none;
+    }
+    .arc-badge {
+      display: inline-block;
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.65rem;
       font-weight: 500;
-      letter-spacing: 0.18em;
+      letter-spacing: 0.15em;
       text-transform: uppercase;
-      padding: 0.38em 1em;
+      padding: 0.3em 0.9em;
       border-radius: 20px;
-      margin-bottom: 1.5rem;
-    }
-
-    /* Main headline */
-    .hero-headline {
-      font-family: 'Lora', serif;
-      font-size: clamp(1.9rem, 6vw, 3rem);
-      font-weight: 700;
-      line-height: 1.15;
-      color: var(--cream);
-      margin-bottom: 0.6rem;
-    }
-
-    .hero-headline .num {
-      color: var(--accent-gold);
-      font-style: italic;
-    }
-
-    .hero-sub {
-      font-size: 0.9rem;
-      color: rgba(250,246,240,0.5);
-      margin-bottom: 2.5rem;
-      letter-spacing: 0.01em;
-    }
-
-    .hero-sub strong {
-      color: rgba(250,246,240,0.75);
-      font-weight: 500;
-    }
-
-    /* ── COUNTDOWN ── */
-    .countdown {
-      display: flex;
-      align-items: flex-start;
-      justify-content: center;
-      gap: 0.25rem;
-      margin-bottom: 2.75rem;
-    }
-
-    .cd-unit {
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      min-width: 72px;
-    }
-
-    .cd-num {
-      font-family: 'DM Sans', sans-serif;
-      font-size: clamp(2.4rem, 8vw, 3.6rem);
-      font-weight: 600;
-      font-variant-numeric: tabular-nums;
-      color: var(--cream);
-      line-height: 1;
-      letter-spacing: -0.02em;
-      /* subtle glow on the numbers */
-      text-shadow: 0 0 40px rgba(212,121,58,0.25);
-    }
-
-    .cd-label {
-      font-size: 0.62rem;
-      font-weight: 500;
-      letter-spacing: 0.16em;
-      text-transform: uppercase;
-      color: rgba(250,246,240,0.35);
-      margin-top: 0.3rem;
-    }
-
-    .cd-sep {
-      font-size: clamp(2rem, 7vw, 3rem);
-      font-weight: 300;
-      color: rgba(212,121,58,0.45);
-      line-height: 1;
-      padding: 0 0.1rem;
-      /* offset down slightly to align with numbers */
-      margin-top: 0.1rem;
-      animation: sepPulse 2s ease-in-out infinite;
-    }
-
-    @keyframes sepPulse {
-      0%, 100% { opacity: 1; }
-      50%       { opacity: 0.3; }
-    }
-
-    /* ── PROGRESS ── */
-    .progress-section {
-      max-width: 480px;
-      margin: 0 auto;
-    }
-
-    .progress-primary-label {
-      display: flex;
-      align-items: baseline;
-      justify-content: space-between;
-      margin-bottom: 0.5rem;
-    }
-
-    .progress-count-main {
-      font-family: 'Lora', serif;
-      font-size: 1.05rem;
-      font-weight: 600;
-      color: var(--cream);
-    }
-
-    .progress-count-main span {
-      color: var(--accent-gold);
-    }
-
-    .progress-goal {
-      font-size: 0.72rem;
-      color: rgba(250,246,240,0.35);
-      letter-spacing: 0.05em;
-    }
-
-    .progress-track {
-      background: rgba(255,255,255,0.07);
-      border-radius: 99px;
-      height: 8px;
-      overflow: hidden;
-      margin-bottom: 0.65rem;
-    }
-
-    .progress-fill {
-      height: 100%;
-      background: linear-gradient(90deg, var(--accent), var(--accent-gold));
-      border-radius: 99px;
-      width: 0%;
-      transition: width 1.2s cubic-bezier(0.4, 0, 0.2, 1);
-      box-shadow: 0 0 12px rgba(212,121,58,0.5);
-    }
-
-    .progress-desc {
-      font-size: 0.78rem;
-      color: rgba(250,246,240,0.45);
-      text-align: left;
       margin-bottom: 1.1rem;
+      position: relative;
+    }
+    header h1 {
+      font-family: 'Lora', serif;
+      font-size: clamp(1.7rem, 5.5vw, 2.6rem);
+      font-weight: 600;
+      line-height: 1.2;
+      margin-bottom: 0.4rem;
+      position: relative;
+    }
+    header h1 em { color: var(--accent-light); font-style: italic; }
+    header .subtitle {
+      font-size: 0.9rem;
+      color: rgba(250,246,240,0.6);
+      margin-top: 0.5rem;
+      position: relative;
     }
 
-    .progress-desc em {
-      font-style: normal;
-      color: var(--accent-light);
-      font-weight: 500;
-    }
-
-    /* Started — secondary, thinner bar */
-    .progress-started-row {
-      display: flex;
-      align-items: center;
-      gap: 0.75rem;
-    }
-
-    .progress-started-label {
-      font-size: 0.72rem;
-      color: rgba(250,246,240,0.3);
-      white-space: nowrap;
-    }
-
-    .progress-started-label span {
-      color: rgba(250,246,240,0.5);
-      font-weight: 500;
-    }
-
-    .progress-track-sm {
-      flex: 1;
-      background: rgba(255,255,255,0.05);
-      border-radius: 99px;
-      height: 3px;
-      overflow: hidden;
-    }
-
-    .progress-fill-sm {
-      height: 100%;
-      background: rgba(212,121,58,0.4);
-      border-radius: 99px;
-      width: 0%;
-      transition: width 1.4s cubic-bezier(0.4, 0, 0.2, 1);
-    }
-
-    /* ══════════════════════════════════════
-       READING SECTION
-    ══════════════════════════════════════ */
+    /* ── MAIN ── */
     main {
       max-width: 760px;
       margin: 0 auto;
-      padding: 2.75rem 1.25rem 3rem;
+      padding: 2.5rem 1.25rem 3rem;
     }
-
-    .section-intro {
+    .intro {
       text-align: center;
       margin-bottom: 2rem;
     }
-
-    .section-intro h2 {
+    .intro h2 {
       font-family: 'Lora', serif;
       font-size: clamp(1.1rem, 3vw, 1.35rem);
       font-weight: 600;
       color: var(--dark);
-      margin-bottom: 0.45rem;
+      margin-bottom: 0.5rem;
     }
-
-    .section-intro p {
+    .intro p {
       font-size: 0.92rem;
       color: var(--muted);
       line-height: 1.65;
@@ -322,9 +125,77 @@
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 1rem;
-      margin-bottom: 1.25rem;
+      margin-bottom: 1rem;
     }
 
+    /* Full-width section reader card */
+    .read-card-full {
+      grid-column: 1 / -1;
+      background: var(--warm-white);
+      border: 1.5px solid var(--accent);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 0;
+      text-decoration: none;
+      color: var(--text);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+      transition: box-shadow 0.2s, transform 0.18s;
+      position: relative;
+    }
+    .read-card-full:hover {
+      box-shadow: var(--shadow-hover);
+      transform: translateY(-2px);
+    }
+    .read-card-full-badge {
+      background: var(--accent);
+      color: #fff;
+      font-size: 0.65rem;
+      font-weight: 500;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      padding: 0.28em 0;
+      text-align: center;
+    }
+    .read-card-full-body {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      padding: 1.25rem 1.5rem;
+    }
+    .read-card-full .card-icon { font-size: 1.9rem; line-height: 1; flex-shrink: 0; }
+    .read-card-full .card-inner { flex: 1; min-width: 0; }
+    .read-card-full .card-label {
+      font-family: 'Lora', serif;
+      font-size: 1.05rem;
+      font-weight: 600;
+      color: var(--dark);
+      margin-bottom: 0.3rem;
+    }
+    .read-card-full .card-desc {
+      font-size: 0.82rem;
+      color: var(--muted);
+      line-height: 1.5;
+      margin-bottom: 0.5rem;
+    }
+    .read-card-full .card-cta {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.3rem;
+      background: var(--accent);
+      color: #fff;
+      font-family: 'DM Sans', sans-serif;
+      font-size: 0.82rem;
+      font-weight: 500;
+      padding: 0.5rem 1.1rem;
+      border-radius: 8px;
+      width: fit-content;
+      transition: background 0.15s;
+    }
+    .read-card-full:hover .card-cta { background: #c06830; }
+
+    /* Secondary reading cards */
     .read-card {
       background: var(--warm-white);
       border: 1.5px solid var(--tan);
@@ -340,55 +211,27 @@
       position: relative;
       overflow: hidden;
     }
-
     .read-card:hover {
       box-shadow: var(--shadow-hover);
       transform: translateY(-2px);
       border-color: var(--accent);
     }
-
-    .read-card.highlighted {
-      border-color: var(--accent);
-      background: linear-gradient(135deg, #fff9f2 70%, #fdebd8);
-    }
-
-    .read-card.highlighted::before {
-      content: '★ Recommended for you';
-      position: absolute;
-      top: 0; left: 0; right: 0;
-      background: var(--accent);
-      color: #fff;
-      font-size: 0.65rem;
-      font-weight: 500;
-      letter-spacing: 0.1em;
-      text-transform: uppercase;
-      padding: 0.28em 0;
-      text-align: center;
-    }
-
-    .read-card.highlighted .card-icon { margin-top: 1.25rem; }
-
-    .card-icon  { font-size: 2rem; line-height: 1; }
-
+    .read-card.highlighted { border-color: var(--brown); }
+    .card-icon { font-size: 2rem; line-height: 1; }
     .card-label {
       font-family: 'Lora', serif;
       font-size: 1.05rem;
       font-weight: 600;
       color: var(--dark);
     }
-
-    .card-desc {
-      font-size: 0.82rem;
-      color: var(--muted);
-      line-height: 1.55;
-    }
-
+    .card-desc { font-size: 0.82rem; color: var(--muted); line-height: 1.55; }
     .card-cta {
       display: inline-flex;
       align-items: center;
       gap: 0.3rem;
-      background: var(--accent);
-      color: #fff;
+      background: transparent;
+      color: var(--accent);
+      border: 1.5px solid var(--accent);
       font-family: 'DM Sans', sans-serif;
       font-size: 0.82rem;
       font-weight: 500;
@@ -398,16 +241,7 @@
       width: fit-content;
       transition: background 0.15s;
     }
-
-    .read-card:hover .card-cta { background: #c06830; }
-
-    .card-cta-ghost {
-      background: transparent;
-      color: var(--accent);
-      border: 1.5px solid var(--accent);
-    }
-
-    .read-card:hover .card-cta-ghost { background: rgba(212,121,58,0.07); }
+    .read-card:hover .card-cta { background: rgba(212,121,58,0.07); }
 
     /* ── DOWNLOAD STRIP ── */
     .download-strip {
@@ -419,11 +253,9 @@
       background: var(--warm-white);
       border: 1px solid var(--tan);
       border-radius: var(--radius);
-      margin-bottom: 2rem;
+      margin-bottom: 1.5rem;
     }
-
     .download-strip p { font-size: 0.85rem; color: var(--muted); }
-
     .download-strip a {
       font-size: 0.82rem;
       font-weight: 500;
@@ -434,7 +266,6 @@
       white-space: nowrap;
       transition: color 0.15s, border-color 0.15s;
     }
-
     .download-strip a:hover { color: var(--accent); border-color: var(--accent); }
 
     /* ── DIVIDER ── */
@@ -450,94 +281,57 @@
       gap: 0.75rem;
       margin-bottom: 1.25rem;
     }
-
-    .section-divider::before,
-    .section-divider::after {
-      content: ''; flex: 1; height: 1px; background: var(--tan);
+    .section-divider::before, .section-divider::after {
+      content: '';
+      flex: 1;
+      height: 1px;
+      background: var(--tan);
     }
 
-    /* ── RESOURCES CARD ── */
-    .resources-card {
-      background: var(--warm-white);
-      border: 1.5px solid var(--tan);
-      border-radius: var(--radius);
-      padding: 1.5rem 1.75rem;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
+    /* ── BOTTOM ACTION CARDS ── */
+    .bottom-cards {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
       gap: 1rem;
-      margin-bottom: 1.25rem;
+    }
+    .action-card {
+      border-radius: var(--radius);
+      padding: 1.5rem;
       text-decoration: none;
       color: var(--text);
-      transition: box-shadow 0.2s, border-color 0.2s, transform 0.15s;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+      transition: box-shadow 0.2s, transform 0.18s;
     }
-
-    .resources-card:hover {
-      box-shadow: var(--shadow-hover);
-      border-color: var(--accent);
-      transform: translateY(-1px);
+    .action-card:hover { transform: translateY(-2px); box-shadow: var(--shadow-hover); }
+    .action-card.light {
+      background: var(--warm-white);
+      border: 1.5px solid var(--tan);
     }
-
-    .resources-card-left { display: flex; align-items: center; gap: 1rem; }
-    .resources-icon { font-size: 1.75rem; }
-
-    .resources-text h3 {
+    .action-card.light:hover { border-color: var(--accent); }
+    .action-card.dark {
+      background: var(--dark);
+      border: 1.5px solid var(--dark);
+    }
+    .action-card-icon { font-size: 1.5rem; line-height: 1; }
+    .action-card-label {
       font-family: 'Lora', serif;
-      font-size: 1rem;
+      font-size: 0.98rem;
       font-weight: 600;
       color: var(--dark);
-      margin-bottom: 0.2rem;
+      line-height: 1.25;
     }
-
-    .resources-text p {
+    .action-card.dark .action-card-label { color: var(--cream); }
+    .action-card-desc { font-size: 0.8rem; color: var(--muted); line-height: 1.5; }
+    .action-card.dark .action-card-desc { color: rgba(250,246,240,0.6); }
+    .action-card-cta {
       font-size: 0.8rem;
-      color: var(--muted);
-      line-height: 1.4;
-    }
-
-    .resources-arrow {
-      color: var(--accent);
-      font-size: 1.1rem;
-      flex-shrink: 0;
-    }
-
-    /* ── FEEDBACK CARD ── */
-    .feedback-card {
-      background: var(--dark);
-      color: var(--cream);
-      border-radius: var(--radius);
-      padding: 1.75rem 1.75rem;
-      text-align: center;
-    }
-
-    .feedback-card h3 {
-      font-family: 'Lora', serif;
-      font-size: 1.15rem;
-      font-weight: 600;
-      margin-bottom: 0.5rem;
-    }
-
-    .feedback-card p {
-      font-size: 0.87rem;
-      color: rgba(250,246,240,0.65);
-      line-height: 1.6;
-      margin-bottom: 1.1rem;
-    }
-
-    .feedback-btn {
-      display: inline-block;
-      background: var(--accent);
-      color: #fff;
-      font-family: 'DM Sans', sans-serif;
-      font-size: 0.9rem;
       font-weight: 500;
-      padding: 0.7rem 1.75rem;
-      border-radius: 10px;
-      text-decoration: none;
-      transition: background 0.15s, transform 0.12s;
+      color: var(--accent);
+      margin-top: 0.15rem;
     }
-
-    .feedback-btn:hover { background: #c06830; transform: translateY(-1px); }
+    .action-card.dark .action-card-cta { color: var(--accent-light); }
 
     /* ── FOOTER ── */
     footer {
@@ -549,267 +343,111 @@
     }
 
     /* ── ANIMATIONS ── */
-    .hero-inner {
-      opacity: 0;
-      animation: fadeUp 0.6s ease 0.1s forwards;
-    }
-
-    .read-card, .download-strip, .resources-card, .feedback-card {
+    .read-card-full, .read-card, .download-strip, .action-card {
       opacity: 0;
       transform: translateY(14px);
       animation: fadeUp 0.45s ease forwards;
     }
-
-    .read-card:nth-child(1) { animation-delay: 0.05s; }
-    .read-card:nth-child(2) { animation-delay: 0.15s; }
-    .download-strip         { animation-delay: 0.20s; }
-    .resources-card         { animation-delay: 0.25s; }
-    .feedback-card          { animation-delay: 0.30s; }
-
-    @keyframes fadeUp {
-      to { opacity: 1; transform: translateY(0); }
-    }
+    .read-card-full             { animation-delay: 0.05s; }
+    .read-card:nth-child(2)     { animation-delay: 0.12s; }
+    .read-card:nth-child(3)     { animation-delay: 0.19s; }
+    .download-strip             { animation-delay: 0.26s; }
+    .action-card:nth-child(1)   { animation-delay: 0.32s; }
+    .action-card:nth-child(2)   { animation-delay: 0.38s; }
+    @keyframes fadeUp { to { opacity: 1; transform: translateY(0); } }
 
     /* ── MOBILE ── */
     @media (max-width: 600px) {
       .reading-options { grid-template-columns: 1fr; }
+      .bottom-cards    { grid-template-columns: 1fr; }
       main { padding: 1.75rem 1rem 2.5rem; }
       .read-card { padding: 1.4rem 1.25rem; }
       .download-strip { flex-direction: column; text-align: center; gap: 0.4rem; }
-      .cd-unit { min-width: 58px; }
-      .resources-card { flex-direction: column; align-items: flex-start; }
     }
   </style>
 </head>
 <body>
 
-  <!-- ══ HERO ══ -->
-  <section class="hero">
-    <div class="hero-topline"></div>
-    <div class="hero-inner">
+  <header>
+    <div class="arc-badge">Advance Reader Copy</div>
+    <h1>Smile When You <em>Poop</em></h1>
+    <p class="subtitle">How to Be Grateful When Life Is Hard &nbsp;&middot;&nbsp; Conrad Deas</p>
+  </header>
 
-      <div class="founding-badge">📖 Founding Reader Edition</div>
+  <main>
+    <div class="intro">
+      <h2>Choose how you&rsquo;d like to read</h2>
+      <p>Read the full book right here &mdash; no download required. Pick the experience that works best for you.</p>
+    </div>
 
-      <h1 class="hero-headline">
-        Seeking <span class="num">10,000</span><br>Founding SWYPers
-      </h1>
+    <div class="reading-options">
 
-      <p class="hero-sub">
-        Join before <strong>World Gratitude Day — September 21, 2026</strong>
-      </p>
-
-      <!-- Countdown -->
-      <div class="countdown">
-        <div class="cd-unit">
-          <span class="cd-num" id="cd-days">—</span>
-          <span class="cd-label">days</span>
-        </div>
-        <span class="cd-sep">:</span>
-        <div class="cd-unit">
-          <span class="cd-num" id="cd-hours">—</span>
-          <span class="cd-label">hrs</span>
-        </div>
-        <span class="cd-sep">:</span>
-        <div class="cd-unit">
-          <span class="cd-num" id="cd-mins">—</span>
-          <span class="cd-label">min</span>
-        </div>
-        <span class="cd-sep">:</span>
-        <div class="cd-unit">
-          <span class="cd-num" id="cd-secs">—</span>
-          <span class="cd-label">sec</span>
-        </div>
-      </div>
-
-      <!-- Progress: Confirmed Founding SWYPers -->
-      <div class="progress-section">
-        <div class="progress-primary-label">
-          <span class="progress-count-main">
-            <span id="count-completed">—</span> of 10,000 Founding SWYPers
-          </span>
-          <span class="progress-goal" id="pct-completed"></span>
-        </div>
-        <div class="progress-track">
-          <div class="progress-fill" id="bar-completed"></div>
-        </div>
-        <p class="progress-desc">Confirmed by completing Chapter 1</p>
-
-        <!-- Secondary: Started reading -->
-        <div class="progress-started-row">
-          <span class="progress-started-label">+ <span id="count-started">—</span> people have started reading</span>
-          <div class="progress-track-sm">
-            <div class="progress-fill-sm" id="bar-started"></div>
+      <!-- Section reader — full width, always first -->
+      <a href="quick-start.html" class="read-card-full">
+        <div class="read-card-full-badge">&#9733; Recommended for any device</div>
+        <div class="read-card-full-body">
+          <div class="card-icon">&#128218;</div>
+          <div class="card-inner">
+            <div class="card-label">Read by Section</div>
+            <div class="card-desc">Web-optimized pages with progress tracking. Works great on phone, tablet, or desktop &mdash; no app needed.</div>
+            <div class="card-cta">Start Reading &rarr;</div>
           </div>
         </div>
-      </div>
+      </a>
 
-    </div>
-  </section>
-
-  <!-- ══ READING SECTION ══ -->
-  <main>
-    <div class="section-intro">
-      <h2>Choose how you'd like to read</h2>
-      <p>Read the full book right here — no download required. Pick what works best for you.</p>
-    </div>
-
-    <div class="reading-options" id="reading-options">
+      <!-- Desktop PDF -->
       <a href="pdf.html" class="read-card" id="card-desktop">
-        <div class="card-icon">🖥️</div>
-        <div class="card-label">Read Online — Desktop</div>
-        <div class="card-desc">Full PDF experience in your browser. Best for laptops and desktops with zoom controls and page navigation.</div>
-        <div class="card-cta">Open &amp; Read →</div>
+        <div class="card-icon">&#128421;&#65039;</div>
+        <div class="card-label">Full PDF &mdash; Desktop</div>
+        <div class="card-desc">Complete book in your browser. Best on laptops and desktops with zoom and page navigation.</div>
+        <div class="card-cta">Open PDF &rarr;</div>
       </a>
 
+      <!-- Mobile EPUB -->
       <a href="mobile.html" class="read-card" id="card-mobile">
-        <div class="card-icon">📱</div>
-        <div class="card-label">Read on Mobile</div>
+        <div class="card-icon">&#128241;</div>
+        <div class="card-label">Full Book &mdash; Mobile</div>
         <div class="card-desc">Optimized for phones and tablets. Clean chapter navigation with comfortable text sizing.</div>
-        <div class="card-cta">Open &amp; Read →</div>
+        <div class="card-cta">Open &amp; Read &rarr;</div>
       </a>
+
     </div>
 
     <div class="download-strip">
       <p>Prefer to read offline?</p>
-      <a href="book.pdf" download>⬇ Download PDF</a>
-      <span style="color:var(--tan)">·</span>
-      <a href="book.epub" download>⬇ Download EPUB</a>
+      <a href="book.pdf" download>&#8595; Download PDF</a>
     </div>
 
-    <div class="section-divider">Bonus resources</div>
+    <div class="section-divider">When you&rsquo;re done reading</div>
 
-    <a href="resources.html" class="resources-card">
-      <div class="resources-card-left">
-        <div class="resources-icon">🎁</div>
-        <div class="resources-text">
-          <h3>Founding Reader Resources</h3>
-          <p>Slides, audio, and video content — exclusive for you</p>
-        </div>
-      </div>
-      <span class="resources-arrow">→</span>
-    </a>
-
-    <div class="section-divider">When you're done reading</div>
-
-    <div class="feedback-card">
-      <h3>Become an Official Founding SWYPer</h3>
-      <p>You're reading this before the world does. Your feedback shapes the final book — Conrad reads every response personally.</p>
-      <a href="feedback.html" class="feedback-btn">💬 Leave My Feedback →</a>
+    <div class="bottom-cards">
+      <a href="resources.html" class="action-card light">
+        <div class="action-card-icon">&#127381;</div>
+        <div class="action-card-label">Bonus Resources</div>
+        <div class="action-card-desc">Video overview, audio deep-dive, slide deck, and your 100-day habit tracker.</div>
+        <div class="action-card-cta">View extras &rarr;</div>
+      </a>
+      <a href="feedback.html" class="action-card dark">
+        <div class="action-card-icon">&#128172;</div>
+        <div class="action-card-label">Leave Feedback</div>
+        <div class="action-card-desc">You&rsquo;re one of a small group reading early. Conrad reads every response personally.</div>
+        <div class="action-card-cta">Share thoughts &rarr;</div>
+      </a>
     </div>
+
   </main>
 
   <footer>
-    &copy; 2026 A. Conrad Deas II &nbsp;·&nbsp; Smile When You Poop &nbsp;·&nbsp; Founding Reader Edition
+    &copy; 2025 Conrad Deas &nbsp;&middot;&nbsp; Smile When You Poop &nbsp;&middot;&nbsp; Advance Reader Copy &mdash; Not for distribution
   </footer>
 
   <script>
-    // ── COUNTDOWN ──
-    // Target: World Gratitude Day, September 21 2026 at midnight UTC
-    const TARGET = new Date('2026-09-21T00:00:00Z');
-
-    function updateCountdown() {
-      const now  = new Date();
-      const diff = TARGET - now;
-
-      if (diff <= 0) {
-        document.getElementById('cd-days').textContent  = '0';
-        document.getElementById('cd-hours').textContent = '00';
-        document.getElementById('cd-mins').textContent  = '00';
-        document.getElementById('cd-secs').textContent  = '00';
-        return;
-      }
-
-      const days  = Math.floor(diff / 86400000);
-      const hours = Math.floor((diff % 86400000) / 3600000);
-      const mins  = Math.floor((diff % 3600000)  / 60000);
-      const secs  = Math.floor((diff % 60000)    / 1000);
-
-      const pad = n => String(n).padStart(2, '0');
-
-      document.getElementById('cd-days').textContent  = days;
-      document.getElementById('cd-hours').textContent = pad(hours);
-      document.getElementById('cd-mins').textContent  = pad(mins);
-      document.getElementById('cd-secs').textContent  = pad(secs);
-    }
-
-    updateCountdown();
-    setInterval(updateCountdown, 1000);
-
-
-    // ── LIVE READER COUNTER ──
-    // Replace these two values with your real Firebase credentials
-    const FIREBASE_PROJECT_ID = 'swyp-readers';
-    const FIREBASE_API_KEY    = 'AIzaSyCOjqtVWmlAwG82rHLmFoqR6fNrOA3gCog';
-
-    async function fetchCounters() {
-      const url = `https://firestore.googleapis.com/v1/projects/${FIREBASE_PROJECT_ID}/databases/(default)/documents/counters/swyp_readers?key=${FIREBASE_API_KEY}`;
-      try {
-        const res  = await fetch(url);
-        const data = await res.json();
-        const completed = parseInt(data.fields?.completed?.integerValue || '0');
-        const started   = parseInt(data.fields?.started?.integerValue   || '0');
-        return { completed, started };
-      } catch {
-        return { completed: 0, started: 0 };
-      }
-    }
-
-    function animateCounter(elementId, target) {
-      const el    = document.getElementById(elementId);
-      const start = 0;
-      const dur   = 1200;
-      const begin = performance.now();
-
-      function step(now) {
-        const elapsed  = now - begin;
-        const progress = Math.min(elapsed / dur, 1);
-        const ease     = 1 - Math.pow(1 - progress, 3); // ease-out-cubic
-        el.textContent = Math.floor(ease * target).toLocaleString();
-        if (progress < 1) requestAnimationFrame(step);
-      }
-
-      requestAnimationFrame(step);
-    }
-
-    function updateProgress(completed, started) {
-      const GOAL = 10000;
-
-      // Completed bar
-      animateCounter('count-completed', completed);
-      const pct = Math.min((completed / GOAL) * 100, 100);
-      document.getElementById('bar-completed').style.width = pct + '%';
-      if (completed > 0) {
-        document.getElementById('pct-completed').textContent =
-          Math.round(pct) + '% there';
-      }
-
-      // Started bar (secondary, relative to completed for visual interest)
-      document.getElementById('count-started').textContent =
-        started.toLocaleString();
-      const startedPct = Math.min((started / GOAL) * 100, 100);
-      document.getElementById('bar-started').style.width = startedPct + '%';
-    }
-
-    // Only fetch if placeholders have been replaced
-    if (!FIREBASE_PROJECT_ID.startsWith('YOUR_')) {
-      fetchCounters().then(({ completed, started }) => {
-        updateProgress(completed, started);
-      });
-    } else {
-      // Dev mode: show example numbers so the layout is visible
-      updateProgress(247, 589);
-    }
-
-
-    // ── DEVICE DETECTION — highlight the right reading card ──
-    const isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent)
-                     || window.innerWidth < 600;
-    const container    = document.getElementById('reading-options');
-    const cardDesktop  = document.getElementById('card-desktop');
-    const cardMobile   = document.getElementById('card-mobile');
-
+    // Highlight the appropriate secondary card based on device
+    // (Section reader is always recommended and shown first)
+    var isMobile = /Mobi|Android|iPhone|iPad|iPod/i.test(navigator.userAgent) || window.innerWidth < 600;
+    var cardDesktop = document.getElementById('card-desktop');
+    var cardMobile  = document.getElementById('card-mobile');
     if (isMobile) {
-      container.insertBefore(cardMobile, cardDesktop);
       cardMobile.classList.add('highlighted');
     } else {
       cardDesktop.classList.add('highlighted');
